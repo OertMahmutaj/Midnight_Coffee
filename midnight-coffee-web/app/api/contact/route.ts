@@ -35,6 +35,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: 'Inquiry received successfully!' }, { status: 200 });
 
   } catch (error) {
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
-  }
+  console.error("Backend Error:", error); 
+  
+  return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+}
 }
